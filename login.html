@@ -6,7 +6,10 @@
     <title>User Login</title>
 </head>
 <body>
-    <h2>User Login</h2>
+    <h2>Login</h2>
+    {%if message%}
+    <p>{{message}}</p>
+    {%endif%}
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
