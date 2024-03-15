@@ -42,7 +42,9 @@ def new_feedback(request):
             feedback = form.save(commit=False)
             feedback.user = request.user
             feedback.save()
-            return redirect('my_feedbacks')
+             messages.success(request,"این پروژه یک نمونه بارز از کدآموز آزاری است!!به امید باخت میلان...مانی هم میره آلمان پیش هیتلر!!نظر ندید چون نصر میگه مهم نیست")
+
+            return redirect('new_feedback')
     else:
         form = FeedbackForm()
     return render(request, 'new_feedback.html', {'form': form})
